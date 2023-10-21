@@ -1,0 +1,30 @@
+<?php
+include('db.php');
+$nombre = $_POST['nombre'];
+$valor = $_POST['valor'];
+session_start();
+
+$conexion = mysqli_connect("localhost", "root", "", "finanzas");
+$id_usuario = $_SESSION['id_usuario'];
+
+$insertar = "INSERT INTO ingresos (nombre, valor, id_usuario) values ('$nombre', '$valor','$id_usuario')";
+$resultado = mysqli_query($conexion, $insertar);
+
+if ($resultado) {
+    header("location:ingresos.php");
+} else {
+    include("ingresos.php");
+?>
+    <h1 class="bad">ERROR AL INSERTAR</h1>
+<?php
+}
+
+// Mostrar los ingresos en la base de datos
+$consulta = "SELECT * FROM ingresos";
+$resultadoConsulta = mysqli_query($conexion, $consulta);
+?>
+<?php
+mysqli_free_result($resultado);
+mysqli_free_result($resultadoConsulta);
+mysqli_close($conexion);
+?>

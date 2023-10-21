@@ -1,0 +1,38 @@
+body {
+    background-image: url('1.jpeg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 100px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+input[type="submit"] {
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[name="aceptar"] {
+    background-color: red;
+    color: white;
+}
+
+input[name="cancelar"] {
+    background-color: blue;
+    color: white;
+}
